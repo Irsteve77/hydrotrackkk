@@ -1,0 +1,6 @@
+{
+  "name": "HydroTrack",
+  "description": "Application Android de suivi d'hydratation avec cercle de progression 2L, actions rapides et thème sombre turquoise.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
