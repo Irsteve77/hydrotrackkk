@@ -47,4 +47,17 @@ L'application propose une interface moderne basée sur Material 3, avec un thèm
 5. Synchronise le projet (`Sync Project with Gradle Files`).
 6. Lance l'application sur un émulateur ou un appareil (`Shift + F10`).
 
-## 📂 Structure du projet
+## 🧩 Problèmes résolus (ordre chronologique)
+
+1. **`libs.versions.toml` incomplet** → conservé toutes les clés existantes, mis à jour uniquement agp/kotlin/coreKtx/activityCompose/composeBom, aligné KSP sur Kotlin (`2.0.21-1.0.28`).
+2. **`compileSdk { ... }` (syntaxe AGP 9)** incompatible avec AGP 8.10.1 → revenu à `compileSdk = 36`.
+3. **`android.useAndroidX` manquant** → ajouté `android.useAndroidX=true` dans `gradle.properties`.
+4. **`debug.keystore` introuvable** → généré via `keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"`.
+5. **`ClassNotFoundException: MainActivity`** → plugin `kotlin-android` manquant (seul `kotlin-compose` était déclaré) → ajouté dans `libs.versions.toml` et les `build.gradle.kts`.
+6. **JVM target incohérent (Java 11 vs Kotlin 21)** → ajouté :
+```kotlin{
+     compilerOptions {
+       jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+     }
+   }
+```
