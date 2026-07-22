@@ -1,22 +1,50 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 💧 HydroTrack
 
-# Run and deploy your AI Studio app
+**HydroTrack** est une application Android native développée avec **Jetpack Compose**, conçue pour aider les utilisateurs à suivre et optimiser leur hydratation quotidienne.
 
-This contains everything you need to run your app locally.
+## 📱 Aperçu
 
-View your app in AI Studio: https://ai.studio/apps/340503e8-ebe3-466a-89ba-bacfd2bab44e
+L'application propose une interface moderne basée sur Material 3, avec un thème sombre par défaut, permettant à l'utilisateur de suivre sa consommation d'eau au fil de la journée et de recevoir des recommandations personnalisées grâce à l'intégration de Firebase AI.
 
-## Run Locally
+## ✨ Fonctionnalités
 
-**Prerequisites:**  [Android Studio](https://developer.android.com/studio)
+- Suivi de l'hydratation quotidienne
+- Interface utilisateur moderne en Jetpack Compose (Material 3)
+- Persistance locale des données via Room
+- Intégration Firebase (AI, App Check)
+- Appels réseau via Retrofit / OkHttp / Moshi
+- Architecture MVVM (ViewModel + State)
 
+## 🛠️ Stack technique
 
-1. Open Android Studio
-2. Select **Open** and choose the directory containing this project
-3. Allow Android Studio to fix any incompatibilities as it imports the project.
-4. Create a file named `.env` in the project directory and set `GEMINI_API_KEY` in that file to your Gemini API key (see `.env.example` for an example)
-5. Remove this line from the app's `build.gradle.kts` file: `signingConfig = signingConfigs.getByName("debugConfig")`
-6. Run the app on an emulator or physical device
-7. If you have already published your app in AI Studio, please [request upload key reset](https://support.google.com/googleplay/android-developer/answer/9842756#zippy=%2Crequest-an-upload-key-reset) in Google Play Console.
+| Catégorie | Technologies |
+|---|---|
+| Langage | Kotlin |
+| UI | Jetpack Compose, Material 3 |
+| Architecture | MVVM (ViewModel, Lifecycle) |
+| Base de données locale | Room |
+| Réseau | Retrofit, OkHttp, Moshi |
+| Cloud / IA | Firebase AI, Firebase App Check |
+| Build | Gradle (Kotlin DSL), AGP 8.10.1 |
+| Tests | JUnit, Espresso, Robolectric, Roborazzi |
+
+## 📋 Prérequis
+
+- Android Studio (Meerkat feature Drop 2024.3.2 patch1)
+- JDK 11
+- Un fichier `google-services.json` valide à la racine du module `app/` (requis pour Firebase)
+- Un émulateur ou appareil physique en API 33 
+
+## 🚀 Installation
+
+1. Clone le dépôt :
+```bash
+   git clone https://github.com/Irsteve77/hydrotrackk.git
+```
+2. Ouvre le projet dans Android Studio.
+3. Ajoute ton fichier `google-services.json` dans `app/`.
+4. Crée un fichier `.env` à la racine (basé sur `.env.example`) si des clés d'API sont nécessaires.
+5. Synchronise le projet (`Sync Project with Gradle Files`).
+6. Lance l'application sur un émulateur ou un appareil (`Shift + F10`).
+
+## 📂 Structure du projet
